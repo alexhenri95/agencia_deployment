@@ -1,0 +1,31 @@
+extends ./layouts/layout
+block contenido
+    main.container.mt-5 
+        h1.text-center.mt-5 #{pagina}
+
+        blockquote.text-center Lee sobre nuestros clientes y sus experiencias en sus viajes.
+        include ./layouts/bloque_testimoniales
+
+        .row.justify-content-center.col
+            .col-md-8
+                h2.d-block.w-100.w-100.text-center Agregar un testimonio
+                if(errores)
+                    each error in errores 
+                        .alert.col.alert-danger.text-center= error.mensaje 
+
+        .row.justify-content-center.col
+            .col-md-8 
+                form(action="/testimoniales" method="POST")
+                    .form-group 
+                        label(for="nombre") Nombre:
+                        input#nombre(type="text", class="form-control", placeholder="Ingrese su nombre completo...", name="nombre", value=nombre)
+
+                    .form-group 
+                        label(for="email") Email:
+                        input#email(type="text", class="form-control", placeholder="Ingrese su correo electrónico...", name="email", value=email)
+
+                    .form-group 
+                        label(for="mensaje") Mensaje:
+                        textarea#mensaje(class="form-control", name="mensaje", placeholder="Ingrese un mensaje...", rows=3, value=mensaje)
+                    
+                    input.btn.btn-success.btn-block(type="submit")

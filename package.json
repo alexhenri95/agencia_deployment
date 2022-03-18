@@ -1,0 +1,23 @@
+{
+  "name": "005-agencia-viajes",
+  "version": "1.0.0",
+  "description": "Primer proyecto con nodeJs y Express",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node index.js"
+  },
+  "type": "module",
+  "author": "Alex Henriquez S",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "pug": "^3.0.2",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
